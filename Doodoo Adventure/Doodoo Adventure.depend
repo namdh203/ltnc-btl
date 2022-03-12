@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1647055016 source:d:\project test\doodoo adventure\doodoo adventure\src\graphics\texture.cpp
+	"Texture.h"
+	"Engine.h"
+
+1647054930 d:\project test\doodoo adventure\doodoo adventure\src\graphics\texture.h
+	<string>
+	"SDL.h"
+	<map>
+
+1647054995 d:\project test\doodoo adventure\doodoo adventure\src\core\engine.h
+	"SDL.h"
+	"SDL_image.h"
+
+1647054709 source:d:\project test\doodoo adventure\doodoo adventure\main.cpp
+	"Engine.h"
+
+1647054807 source:d:\project test\doodoo adventure\doodoo adventure\src\core\engine.cpp
+	"Engine.h"
+	"Texture.h"
+	<iostream>
+	"SDL.h"
+
