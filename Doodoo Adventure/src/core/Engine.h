@@ -3,8 +3,8 @@
 
 #include "SDL.h"
 #include "SDL_image.h"
-const int SCREEN_WIDTH = 1540;
-const int SCREEN_HEIGHT = 940;
+const int SCREEN_WIDTH = 720;
+const int SCREEN_HEIGHT = 480;
 
 class Engine {
 

@@ -1,13 +1,12 @@
 #include "Engine.h"
 #include "Texture.h"
+#include "Doodoo.h"
 #include <iostream>
 
-#include "SDL.h"
-
 Engine* Engine::s_Instance = nullptr;
+Doodoo* player = nullptr;
 
 bool Engine::Init() {
-
   if (SDL_Init(SDL_INIT_VIDEO) != 0 && IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) != 0 ) {
     SDL_Log("false to initialize SDL: %s", SDL_GetError());
     return false;
@@ -25,7 +24,9 @@ bool Engine::Init() {
     return false;
   }
 
-  Texture::GetInstance()->Load("tree", "assets/tree_1.png");
+  Texture::GetInstance()->Load("idle", "assets/Animation/B_witch_idle.png");
+
+  player = new Doodoo(new Properties("idle", 100, 140, 32, 48));
 
   return m_IsRunning = true;
 }
@@ -43,13 +44,15 @@ void Engine::Quit() {
 }
 
 void Engine::Update() {
+  player->Update(0);
 }
 
 void Engine::Render() {
   SDL_SetRenderDrawColor(m_Renderer, 124, 218, 254, 255);
   SDL_RenderClear(m_Renderer);
 
-  Texture::GetInstance()->Draw("tree", 96, 125, 64, 80);
+  player->Draw();
+
   SDL_RenderPresent(m_Renderer);
 }
 

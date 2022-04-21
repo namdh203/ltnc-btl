@@ -13,6 +13,13 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="src/core" />
+					<Add directory="src/graphics" />
+					<Add directory="src/Physics" />
+					<Add directory="src/Object" />
+					<Add directory="./" />
+					<Add directory="src/Characters" />
+					<Add directory="src/Animation" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +29,13 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="src/core" />
+					<Add directory="src/graphics" />
+					<Add directory="src/Physics" />
+					<Add directory="src/Object" />
+					<Add directory="./" />
+					<Add directory="src/Characters" />
+					<Add directory="src/Animation" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -33,6 +47,19 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Animation/Animation.cpp" />
+		<Unit filename="src/Animation/Animation.h" />
+		<Unit filename="src/Characters/Character.h" />
+		<Unit filename="src/Characters/Doodoo.cpp" />
+		<Unit filename="src/Characters/Doodoo.h" />
+		<Unit filename="src/Object/GameObject.h" />
+		<Unit filename="src/Object/Object.h" />
+		<Unit filename="src/Physics/transform.h" />
+		<Unit filename="src/Physics/vector2d.h" />
+		<Unit filename="src/core/Engine.cpp" />
+		<Unit filename="src/core/Engine.h" />
+		<Unit filename="src/graphics/Texture.cpp" />
+		<Unit filename="src/graphics/Texture.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

@@ -1,6 +1,8 @@
 #include "Texture.h"
 #include "Engine.h"
 
+#include "SDL.h"
+
 Texture* Texture::s_Instance = nullptr;
 
 bool Texture::Load(std::string id, std::string filename) {
@@ -24,6 +26,14 @@ void Texture::Draw(std::string id, int x, int y, int width, int height, SDL_Rend
   SDL_Rect dstRect = {x, y, width, height};
   SDL_RenderCopyEx(Engine::GetInstance()->GetRenderer(), m_TextureMap[id], &srcRect, &dstRect, 0, nullptr, flip);
 }
+
+void Texture::DrawFrame(std::string id, int x, int y, int width, int height, int row, int frame, SDL_RendererFlip flip) {
+  SDL_Rect srcRect = {0, height * frame, width, height};
+  SDL_Rect dstRect = {x, y, width, height};
+  SDL_RenderCopyEx(Engine::GetInstance()->GetRenderer(), m_TextureMap[id], &srcRect, &dstRect, 0, nullptr, flip);
+}
+
+
 
 void Texture::Drop(std::string id) {
   SDL_DestroyTexture(m_TextureMap[id]);
