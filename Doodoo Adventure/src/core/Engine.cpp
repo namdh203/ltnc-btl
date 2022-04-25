@@ -1,6 +1,8 @@
 #include "Engine.h"
 #include "Texture.h"
 #include "Doodoo.h"
+#include "Input.h"
+
 #include <iostream>
 
 Engine* Engine::s_Instance = nullptr;
@@ -24,9 +26,10 @@ bool Engine::Init() {
     return false;
   }
 
-  Texture::GetInstance()->Load("idle", "assets/Animation/B_witch_idle.png");
+  Texture::GetInstance()->Load("player", "assets/Animation/B_witch_idle.png");
+  Texture::GetInstance()->Load("player_run", "assets/Animation/B_witch_run.png");
 
-  player = new Doodoo(new Properties("idle", 100, 140, 32, 48));
+  player = new Doodoo(new Properties("player", 100, 140, 32, 48));
 
   return m_IsRunning = true;
 }
@@ -57,13 +60,7 @@ void Engine::Render() {
 }
 
 void Engine::Events() {
-  SDL_Event event;
-  SDL_PollEvent(&event);
-  switch(event.type) {
-    case SDL_QUIT :
-      Quit();
-      break;
-  }
+  Input::GetInstance()->Listen();
 }
 
 Engine::Engine() {

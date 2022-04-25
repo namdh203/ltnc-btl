@@ -20,6 +20,7 @@
 					<Add directory="./" />
 					<Add directory="src/Characters" />
 					<Add directory="src/Animation" />
+					<Add directory="src/Inputs" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -36,6 +37,7 @@
 					<Add directory="./" />
 					<Add directory="src/Characters" />
 					<Add directory="src/Animation" />
+					<Add directory="src/Inputs" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -52,8 +54,11 @@
 		<Unit filename="src/Characters/Character.h" />
 		<Unit filename="src/Characters/Doodoo.cpp" />
 		<Unit filename="src/Characters/Doodoo.h" />
+		<Unit filename="src/Inputs/Input.cpp" />
+		<Unit filename="src/Inputs/Input.h" />
 		<Unit filename="src/Object/GameObject.h" />
 		<Unit filename="src/Object/Object.h" />
+		<Unit filename="src/Physics/RigidBody.h" />
 		<Unit filename="src/Physics/transform.h" />
 		<Unit filename="src/Physics/vector2d.h" />
 		<Unit filename="src/core/Engine.cpp" />
